@@ -1,0 +1,9 @@
+{
+  "name": "abpdemo",
+  "version": "1.0.0",
+  "dependencies": {
+    "aws-sdk": "^2.929.0",
+    "connect": "^3.7.0",
+    "swagger-tools": "^0.10.4"
+  }
+}

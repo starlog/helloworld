@@ -1,0 +1,62 @@
+---
+swagger: "2.0"
+info:
+  description: "Sample Microservie for ABP"
+  version: "1.0.0"
+  title: "ABP"
+  contact:
+    email: "felixcho@amazon.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "sethost.here"
+basePath: "/"
+schemes:
+  - "https"
+  - "http"
+paths:
+  /hello:
+    get:
+      tags:
+        - "hello"
+      summary: "Hello world"
+      description: "Response with hello world"
+      operationId: "helloworld"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "name"
+          in: "query"
+          description: "Caller name"
+          required: true
+          type: "string"
+          default: "nobody"
+      responses:
+        "200":
+          description: "성공"
+          schema:
+            $ref: "#/definitions/Response"
+      x-swagger-router-controller: "Hello"
+    x-swagger-router-controller: "Hello"
+  /health:
+    get:
+      tags:
+        - "health"
+      operationId: "health"
+      produces:
+        - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "success"
+      x-swagger-router-controller: "Health"
+    x-swagger-router-controller: "Health"
+definitions:
+  Response:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+        description: "Response string"
+    example:
+      message: "message"
