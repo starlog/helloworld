@@ -38,7 +38,7 @@ paths:
             $ref: "#/definitions/Response"
       x-swagger-router-controller: "Hello"
     x-swagger-router-controller: "Hello"
-  /health:
+  /:
     get:
       tags:
         - "health"
