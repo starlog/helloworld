@@ -24,27 +24,28 @@ exports.helloworld = function (name)
         if (Object.keys(examples).length > 0)
         {
             examples["application/json"].message = 'Hello ' + name + '!!';
-            let params = {
-                TableName: 'Contents',
-                Key: {
-                    'filename': {"S": 'media-convert/ingest/sample-drama-002-combined.m3u8'}
-                }
-            };
+            // let params = {
+            //     TableName: 'Contents',
+            //     Key: {
+            //         'filename': {"S": 'media-convert/ingest/sample-drama-002-combined.m3u8'}
+            //     }
+            // };
             // Get single dynamodb data using exact key search
-            ddb.getItem(params, function (err, data)
-            {
-                if(err)
-                {
-                    console.log('ddb.getItem err='+err);
-                    examples['application/json'].addon = err;
-                }
-                else
-                {
-                    console.log('success db call');
-                    examples['application/json'].addon = data;
-                }
-                resolve(examples[Object.keys(examples)[0]]);
-            });
+            // ddb.getItem(params, function (err, data)
+            // {
+            //     if(err)
+            //     {
+            //         console.log('ddb.getItem err='+err);
+            //         examples['application/json'].addon = err;
+            //     }
+            //     else
+            //     {
+            //         console.log('success db call');
+            //         examples['application/json'].addon = data;
+            //     }
+            //     resolve(examples[Object.keys(examples)[0]]);
+            // });
+            resolve(examples[Object.keys(examples)[0]]);
         }
         else
         {

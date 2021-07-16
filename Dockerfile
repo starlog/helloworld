@@ -1,4 +1,4 @@
-FROM public.ecr.aws/bitnami/node:10
+FROM public.ecr.aws/bitnami/node:12
 
 # Create app directory
 RUN mkdir -p /usr/src/app
